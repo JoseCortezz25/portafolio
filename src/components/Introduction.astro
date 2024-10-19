@@ -1,0 +1,47 @@
+---
+import { Button } from "./ui/button";
+import { Download } from "lucide-react";
+---
+
+<section class="lg:h-[100dvh] flex items-center">
+  <div class="mx-auto container gap-5">
+    <div class="h-full w-[50%] mx-auto">
+      <div class="flex gap-8">
+        <div class="size-[90px] min-w-[90px] rounded-full overflow-hidden mb-3">
+          <img
+            src="https://alfonso-portafolio.vercel.app/_next/static/media/me.67abf232.jpg"
+            alt=""
+            class="h-full w-full object-cover"
+          />
+        </div>
+        <div>
+          <h1
+            class="text-4xl lg:text-5xl block font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-neutral-900 bg-opacity-100"
+          >
+            Alfonso Chavarro
+          </h1>
+          <div class="flex items-center gap-2 my-2">
+            <span class="w-[80px] h-[2px] bg-black"></span>
+            <h2 class="text-xl lg:text-lg font-semibold text-neutral-800">
+              Frontend Developer
+            </h2>
+          </div>
+          <p class="mb-5 text-pretty">
+            Desarrollador Frontend apasionado por crear experiencias de usuario
+            atractivas y funcionales. Con experiencia en el desarrollo de
+            aplicaciones web empleando tecnologías web.
+          </p>
+
+          <a
+            href="https://drive.google.com/file/u/0/d/1_lWkwaeJVoUhar98QXv90NtSlGKMFPhc/view?usp=sharing&pli=1"
+          >
+            <Button>
+              Descargar CV
+              <Download class="size-4 ml-3" />
+            </Button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
