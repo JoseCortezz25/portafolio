@@ -1,0 +1,14 @@
+---
+import { cn } from "@/lib/utils";
+
+const { class: className } = Astro.props;
+---
+
+<h2
+  class={cn(
+    className,
+    "text-[45px] leading-[45px] text-neutral-900 font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-neutral-600 to-neutral-900 bg-opacity-100"
+  )}
+>
+  <slot />
+</h2>
