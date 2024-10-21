@@ -1,0 +1,96 @@
+---
+interface Props {
+  color?: string;
+}
+
+const { color } = Astro.props;
+---
+
+<div class="circle-container">
+  <div class="circle" style="--animation-delay: 3s;">
+    <div class="circle-deep-1" style="--animation-delay: 5000ms;">
+      <div class="circle-deep-2"></div>
+    </div>
+  </div>
+  <div class="circle-icon">
+    <slot />
+  </div>
+</div>
+<style define:vars={{ color }}>
+  .circle-container {
+    @apply relative w-[120px] h-[120px];
+  }
+
+  .circle {
+    --border-width: 1px;
+    @apply absolute w-[120px] h-[120px] border border-[#8D8D8D]/20 rounded-full flex items-center justify-center;
+    animation: framework-circles-rotate 3s linear infinite;
+    animation-delay: --animation-delay;
+
+    .circle-deep-1 {
+      @apply relative w-[97px] h-[97px] border border-[#8D8D8D]/20 rounded-full flex items-center justify-center;
+    }
+
+    .circle-deep-1::after {
+      content: "";
+      position: absolute;
+      z-index: 2;
+      background-color: var(--color);
+      inset: 0;
+      left: -1px;
+      bottom: -1px;
+      mask:
+        linear-gradient(45deg, #fff 12%, transparent 43%),
+        radial-gradient(
+            farthest-side,
+            transparent calc(100% - var(--border-width) - 1px),
+            #fff calc(100% - var(--border-width))
+          )
+          content-box;
+      mask-composite: intersect;
+      border-radius: 50%;
+      padding: 1;
+    }
+
+    .circle-deep-2 {
+      @apply relative w-[74px] h-[74px] border border-[#8D8D8D]/20 rounded-full flex items-center justify-center;
+    }
+  }
+
+  .circle::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: var(--color);
+    inset: 0;
+    left: -1px;
+    bottom: -1px;
+    mask:
+      linear-gradient(45deg, #fff 12%, transparent 43%),
+      radial-gradient(
+          farthest-side,
+          transparent calc(100% - var(--border-width) - 1px),
+          #fff calc(100% - var(--border-width))
+        )
+        content-box;
+    mask-composite: intersect;
+    border-radius: 50%;
+    padding: 1;
+  }
+
+  .circle-icon {
+    @apply absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @keyframes framework-circles-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+</style>
