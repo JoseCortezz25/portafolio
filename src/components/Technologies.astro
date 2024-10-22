@@ -14,12 +14,67 @@ import {
   TailwindCSS,
   TypeScript,
 } from "./Icons";
+import Separator from "./Separator.astro";
+import Tech from "./Tech.astro";
 import Technology from "./Technology.astro";
+const technologies = [
+  {
+    name: "HTML5",
+    icon: HTML5,
+  },
+  {
+    name: "CSS",
+    icon: CSS,
+  },
+  {
+    name: "JavaScript",
+    icon: JavaScript,
+  },
+  {
+    name: "React.js",
+    icon: ReactIcon,
+  },
+  {
+    name: "Next.js",
+    icon: Nextjs,
+  },
+  {
+    name: "Astro",
+    icon: AstroIcon,
+  },
+  {
+    name: "TailwindCSS",
+    icon: TailwindCSS,
+  },
+  {
+    name: "TypeScript",
+    icon: TypeScript,
+  },
+  {
+    name: "Express.js",
+    icon: Expressjs,
+  },
+  {
+    name: "Sass",
+    icon: Sass,
+  },
+  {
+    name: "Node",
+    icon: Nodejs,
+  },
+  {
+    name: "Python",
+    icon: Python,
+  },
+];
 ---
 
-<section class="h-[70dvh]">
+<section class="py-36">
+  <!-- <Separator /> -->
   <div class="mx-auto max-w-[1280px]">
-    <div class="flex flex-col items-center justify-between gap-3 py-2">
+    <div
+      class="flex flex-col items-center justify-between gap-3 py-2 px-4 md:px-0"
+    >
       <div class="w-full">
         <Heading class="text-center"> This is My Tech Stack</Heading>
         <p class="text-center mx-auto text-xl mt-3 mb-8 max-w-[600px]">
@@ -28,86 +83,25 @@ import Technology from "./Technology.astro";
         </p>
       </div>
 
-      <div class="relative w-[60%] h-[260px]">
-        <!-- Circle with all techologias -->
-
-        <div>
-          <div class="absolute top-0 left-0">
-            <Technology color="#F0DB4F">
-              <JavaScript className="draggable-icon size-[35px]" />
-            </Technology>
-          </div>
-
-          <div class="absolute bottom-0 left-0">
-            <Technology color="#30a9dc">
-              <CSS className="draggable-icon size-[35px]" />
-            </Technology>
-          </div>
-
-          <div class="absolute top-0 right-0">
-            <Technology color="#00D8FF">
-              <ReactIcon className="draggable-icon size-[35px]" />
-            </Technology>
-          </div>
-
-          <div class="absolute bottom-0 right-0">
-            <Technology color="#EF652A">
-              <HTML5 className="draggable-icon size-[35px]" />
-            </Technology>
-          </div>
-
-          <div
-            class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-          >
-            <Technology color="#8D8D8D">
-              <Nextjs className="draggable-icon size-[35px]" />
-            </Technology>
-          </div>
+      <div class="relative w-full px-4 md:px-0 md:w-[80%]">
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 items-center"
+        >
+          {
+            technologies.map((tech, index) => (
+              <Tech>
+                <tech.icon className="w-full h-full" />
+                <span
+                  class="text-center text-sm text-neutral-900 font-semibold"
+                  slot="tech-name"
+                >
+                  {tech.name}
+                </span>
+              </Tech>
+            ))
+          }
         </div>
       </div>
     </div>
-
-    <!-- <Heading> Lenguajes de desarrollo </Heading> -->
-
-    <!-- <div
-      class="draggable-container flex flex-col gap-[65px] items-center justify-center py-12"
-    >
-      <div class="flex flex-wrap gap-[45px]">
-        <JavaScript className="draggable-icon size-[120px]" />
-        <ReactIcon className="draggable-icon size-[120px]" />
-        <Expressjs className="draggable-icon size-[120px]" />
-        <TailwindCSS className="draggable-icon size-[120px]" />
-        <HTML5 className="draggable-icon size-[120px]" />
-        <Sass className="draggable-icon size-[120px]" />
-      </div>
-      <div class="flex flex-wrap gap-[45px]">
-        <TypeScript className="draggable-icon size-[120px]" />
-        <AstroIcon className="draggable-icon size-[120px]" />
-        <CSS className="draggable-icon size-[120px]" />
-        <Nodejs className="draggable-icon size-[120px]" />
-        <Nextjs className="draggable-icon size-[120px]" />
-        <Python className="draggable-icon size-[120px]" />
-      </div> -->
   </div>
 </section>
-<!-- 
-<script>
-  import gsap from "gsap";
-  import { Draggable } from "gsap/Draggable";
-
-  gsap.registerPlugin(Draggable);
-
-  document.addEventListener("DOMContentLoaded", function (event) {
-    console.log("DOM loaded");
-
-    //wait until images, links, fonts, stylesheets, and js is loaded
-    window.addEventListener("load", function (e) {
-      console.log("Page loaded");
-
-      Draggable.create(".draggable-icon", {
-        bounds: ".draggable-container",
-        // inertia: true,
-      });
-    });
-  });
-</script> -->
