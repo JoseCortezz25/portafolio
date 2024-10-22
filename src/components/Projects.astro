@@ -2,33 +2,13 @@
 import Heading from "./Heading.astro";
 import Project from "./Project.astro";
 import Separator from "./Separator.astro";
-
-const mocks = [
-  {
-    title: "Project 1",
-    description: "This is a description of project 1",
-    image: "https://via.placeholder.com/150",
-    link: "https://www.google.com",
-  },
-  {
-    title: "Project 2",
-    description: "This is a description of project 2",
-    image: "https://via.placeholder.com/150",
-    link: "https://www.google.com",
-  },
-  {
-    title: "Project 3",
-    description: "This is a description of project 3",
-    image: "https://via.placeholder.com/150",
-    link: "https://www.google.com",
-  },
-];
+import { projects } from "@/lib/data";
 ---
 
 <section class="min-h-[70dvh]">
   <Separator />
   <div
-    class="mx-auto w-full px-4 sm:px-0 sm:w-[80%] lg:w-full max-w-[1280px] pt-32 flex flex-col lg:flex-row justify-between relative"
+    class="mx-auto w-full px-4 sm:px-0 sm:w-[80%] lg:w-full max-w-[1280px] py-32 flex flex-col lg:flex-row justify-between relative"
   >
     <div class="w-full lg:w-[30%] h-full lg:sticky lg:top-12 mb-6 lg:mb-0">
       <Heading>Proyectos</Heading>
@@ -38,8 +18,8 @@ const mocks = [
       </p>
     </div>
 
-    <div class="w-full lg:w-[53%] flex flex-col">
-      {mocks.map((mock) => <Project {...mock} />)}
+    <div class="w-full lg:w-[53%] flex flex-col gap-9">
+      {projects.slice(0, 5).map((project) => <Project {...project} />)}
     </div>
   </div>
 </section>
