@@ -69,3 +69,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.social-section {
+  @apply mt-8 flex justify-center gap-6 sm:justify-start md:gap-8;
+}
+
+.social-link {
+  @apply flex gap-3 items-center ;
+
+  span {
+    @apply text-neutral-800 text-xl font-medium;
+  }
+  
+  &:hover span {
+    @apply underline underline-offset-4;
+  }
+}

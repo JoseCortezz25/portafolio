@@ -1,10 +1,10 @@
 ---
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Github } from "./Icons";
-import { ArrowUpIcon } from "lucide-react";
+import { ArrowRight, ArrowUpIcon } from "lucide-react";
 ---
 
-<footer class="bg-white border-t border-t-neutral-200">
+<footer class="bg-white">
   <div
     class="mx-auto max-w-screen-xl px-4 pb-10 pt-10 sm:px-6 lg:px-8 lg:py-16"
   >
@@ -17,8 +17,44 @@ import { ArrowUpIcon } from "lucide-react";
           </span>
         </div>
 
-        <ul class="mt-8 flex justify-center gap-6 sm:justify-start md:gap-6">
+        <ul class="social-section">
           <li>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
+              <ArrowRight className="size-6" />
+              <span> LinkedIn </span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
+              <ArrowRight className="size-6" />
+              <span> Email </span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-link"
+            >
+              <ArrowRight className="size-6" />
+              <span> Github </span>
+            </a>
+          </li>
+
+          <!-- <li>
             <a
               href="#"
               rel="noreferrer"
@@ -40,7 +76,7 @@ import { ArrowUpIcon } from "lucide-react";
               <span class="sr-only">LinkedIn</span>
               <LinkedInLogoIcon className="size-7" />
             </a>
-          </li>
+          </li> -->
         </ul>
       </div>
 
