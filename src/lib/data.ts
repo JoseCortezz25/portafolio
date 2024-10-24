@@ -174,3 +174,9 @@ export const projects = [
     page: 'https://simple-markdown-editor-bltj.vercel.app/'
   }
 ];
+
+export enum ExternalLinks {
+  Github = "https://github.com/JoseCortezz25",
+  LinkedIn = "https://www.linkedin.com/in/alfonsochavarrocortes",
+  Email = "alfonso.jose.cc@gmail.com"
+} 

@@ -2,6 +2,7 @@
 import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Github } from "./Icons";
 import { ArrowRight, ArrowUpIcon } from "lucide-react";
+import { ExternalLinks } from "@/lib/data";
 ---
 
 <footer class="bg-white">
@@ -20,7 +21,7 @@ import { ArrowRight, ArrowUpIcon } from "lucide-react";
         <ul class="social-section">
           <li>
             <a
-              href=""
+              href={ExternalLinks.LinkedIn}
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
@@ -32,7 +33,7 @@ import { ArrowRight, ArrowUpIcon } from "lucide-react";
 
           <li>
             <a
-              href=""
+              href={`mailto:${ExternalLinks.Email}`}
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
@@ -44,7 +45,7 @@ import { ArrowRight, ArrowUpIcon } from "lucide-react";
 
           <li>
             <a
-              href=""
+              href={ExternalLinks.Github}
               target="_blank"
               rel="noopener noreferrer"
               class="social-link"
@@ -53,34 +54,10 @@ import { ArrowRight, ArrowUpIcon } from "lucide-react";
               <span> Github </span>
             </a>
           </li>
-
-          <!-- <li>
-            <a
-              href="#"
-              rel="noreferrer"
-              target="_blank"
-              class="text-neutral-800 transition hover:scale-105"
-            >
-              <span class="sr-only">GitHub</span>
-              <Github className="size-7" />
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="#"
-              rel="noreferrer"
-              target="_blank"
-              class="text-neutral-800 transition hover:scale-105"
-            >
-              <span class="sr-only">LinkedIn</span>
-              <LinkedInLogoIcon className="size-7" />
-            </a>
-          </li> -->
         </ul>
       </div>
 
-      <div class="w-full flex justify-end">
+      <div class="w-full flex justify-center sm:justify-end">
         <button
           onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
           class="rounded-full bg-black size-[60px] flex items-center justify-center"

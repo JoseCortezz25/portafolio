@@ -1,4 +1,5 @@
 ---
+import { Dot } from "lucide-react";
 import Heading from "./Heading.astro";
 import {
   Astro as AstroIcon,
@@ -67,19 +68,44 @@ const technologies = [
     icon: Python,
   },
 ];
+
+const tools = [
+  {
+    name: "VS Code",
+  },
+  {
+    name: "Hyper Terminal",
+  },
+  {
+    name: "Postman",
+  },
+  {
+    name: "Git",
+  },
+  {
+    name: "Github",
+  },
+  {
+    name: "Notion",
+  },
+  {
+    name: "Figma",
+  },
+];
 ---
 
 <section class="py-36">
-  <!-- <Separator /> -->
   <div class="mx-auto max-w-[1280px]">
     <div
       class="flex flex-col items-center justify-between gap-3 py-2 px-4 md:px-0"
     >
       <div class="w-full">
-        <Heading class="text-center"> This is My Tech Stack</Heading>
-        <p class="text-center mx-auto text-xl mt-3 mb-8 max-w-[600px]">
-          One of the marvelous things about technology is that it enables us to
-          build and create in ways we couldn't as individuals.
+        <Heading class="text-center"> Mi stack de tecnologías </Heading>
+        <p
+          class="text-center mx-auto text-md md:text-xl mt-3 mb-8 max-w-[600px]"
+        >
+          Stack tecnológico con el que he trabajado, compuesto por herramientas
+          clave en el desarrollo de proyectos.
         </p>
       </div>
 
@@ -100,6 +126,21 @@ const technologies = [
               </Tech>
             ))
           }
+        </div>
+
+        <div class="mt-12">
+          <h3 class="font-bold text-xl mb-3">Herramientas que utilizo</h3>
+
+          <ul class="flex flex-wrap gap-4">
+            {
+              tools.map((tool) => (
+                <li class="text-lg flex items-center">
+                  <Dot className="size-8" />
+                  <span>{tool.name}</span>
+                </li>
+              ))
+            }
+          </ul>
         </div>
       </div>
     </div>

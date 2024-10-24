@@ -19,9 +19,9 @@ const { name, summary, images, page, repo } = Astro.props;
 
 <article class="flex flex-col justify-between h-full">
   <!-- Image -->
-  <div class="">
+  <div class="overflow-hidden">
     <img
-      class="aspect-video object-cover w-full h-full"
+      class="aspect-video object-cover w-full h-full transition-all ease-in-out hover:scale-110 duration-300"
       src={images?.[0]}
       alt={`Imagen del projecto ${name}`}
     />
